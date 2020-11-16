@@ -1,28 +1,33 @@
+const Dotenv = require("dotenv-webpack");
+
 module.exports = {
   pages: {
     popup: {
       template: "public/browser-extension.html",
       entry: "./src/popup/main.js",
-      title: "Popup"
+      title: "Popup",
     },
     options: {
       template: "public/browser-extension.html",
       entry: "./src/options/main.js",
-      title: "Options"
+      title: "Options",
     },
     override: {
       template: "public/browser-extension.html",
       entry: "./src/override/main.js",
-      title: "Override"
-    }
+      title: "Override",
+    },
   },
   pluginOptions: {
     browserExtension: {
       componentOptions: {
         background: {
-          entry: "src/background.js"
-        }
-      }
-    }
-  }
+          entry: "src/background.js",
+        },
+      },
+    },
+  },
+  configureWebpack: {
+    plugins: [new Dotenv()],
+  },
 };

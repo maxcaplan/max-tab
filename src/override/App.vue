@@ -1,12 +1,20 @@
 <template>
   <div id="background">
-    <div id="content" class="p-3"></div>
+    <div id="content" class="p-3">
+      <weather />
+    </div>
   </div>
 </template>
 
 <script>
+import Weather from "../components/Weather.vue";
+
 export default {
   name: "App",
+
+  components: {
+    Weather,
+  },
 };
 </script>
 
